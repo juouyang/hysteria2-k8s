@@ -1,8 +1,8 @@
 server
 
-https://v2.hysteria.network/zh/docs/getting-started/Server/
-https://v2.hysteria.network/zh/docs/advanced/Full-Server-Config/
-https://v2.hysteria.network/zh/docs/getting-started/Installation/#docker
+* https://v2.hysteria.network/zh/docs/getting-started/Server/
+* https://v2.hysteria.network/zh/docs/advanced/Full-Server-Config/
+* https://v2.hysteria.network/zh/docs/getting-started/Installation/#docker
 
 
 ```
