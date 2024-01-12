@@ -1,0 +1,28 @@
+# listen: :443
+
+tls:
+  cert: /etc/tls/tls.crt
+  key: /etc/tls/tls.key
+
+auth:
+  type: password
+  password:
+
+masquerade:
+  type: proxy
+  proxy:
+    url: https://www.google.com.tw/
+    rewriteHost: true
+  listenHTTP: :80
+  listenHTTPS: :443
+  forceHTTPS: true
+
+resolver:
+  type: https
+  https:
+    addr: 8.8.8.8:443
+    timeout: 10s
+
+trafficStats:
+  listen: :9999
+  secret:

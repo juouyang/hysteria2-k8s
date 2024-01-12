@@ -1,0 +1,4 @@
+tls/tls.crt
+tls/tls.key
+server/config.yaml
+manifests/k8s/hysteria*.yaml
