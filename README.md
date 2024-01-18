@@ -11,6 +11,7 @@ docker-compose up
 
 ---
 
+```
 kubectl create secret generic hysteria-config \
   --from-file=server/config.yaml \
   -o yaml --dry-run=client > manifests/k8s/hysteria-config-secret.yaml
@@ -19,3 +20,17 @@ kubectl create secret tls hysteria-tls \
   --cert=tls/tls.crt \
   --key=tls/tls.key \
   -o yaml --dry-run=client > manifests/k8s/hysteria-tls-secret.yaml
+```
+
+Sealed secret (for GitOps)
+```
+kubectl create secret generic hysteria-config \
+  --from-file=server/config.yaml \
+  -o yaml --dry-run=client | kubeseal -o yaml > manifests/k8s/sealed-config-secret.yaml
+
+kubectl create secret tls hysteria-tls \
+  --cert=tls/tls.crt \
+  --key=tls/tls.key \
+  -o yaml --dry-run=client | kubeseal -o yaml > manifests/k8s/sealed-tls-secret.yaml
+```
+
