@@ -17,7 +17,7 @@ spec:
             - server
             - -c
             - /etc/hysteria/config.yaml
-          image: tobyxdd/hysteria:v2.2.3
+          image: tobyxdd/hysteria:v2.2.4
           name: hysteria2
           ports:
             - containerPort: 443
