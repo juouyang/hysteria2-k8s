@@ -44,4 +44,4 @@ spec:
             secretName: hysteria-config
         - name: hysteria-tls-volume
           secret:
-            secretName: hysteria-tls
+            secretName: apps-k8s-juouyang-com-tls

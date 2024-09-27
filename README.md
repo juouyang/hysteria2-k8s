@@ -34,3 +34,10 @@ kubectl create secret tls hysteria-tls -n hysteria \
   -o yaml --dry-run=client | kubeseal -o yaml > manifests/k8s/sealed-tls-secret.yaml
 ```
 
+---
+
+```
+kubectl get secret apps-k8s-juouyang-com-tls -n nginx-ingress -o yaml \
+  | sed 's/namespace: nginx-ingress/namespace: hysteria/' \
+  | kubectl apply -f -
+```
