@@ -11,7 +11,7 @@ auth:
 masquerade:
   type: proxy
   proxy:
-    url: https://www.google.com.tw/
+    url: https://www.taiwan.net.tw/
     rewriteHost: true
   listenHTTP: :80
   listenHTTPS: :443
@@ -23,6 +23,6 @@ resolver:
     addr: 8.8.8.8:443
     timeout: 10s
 
-trafficStats:
-  listen: :9999
-  secret:
+bandwidth:
+  up: 21 mbps
+  down: 10 mbps
