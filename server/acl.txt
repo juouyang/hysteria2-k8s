@@ -1,0 +1,3 @@
+proxy(ipinfo.io)
+reject(geoip:cn)
+direct(all)

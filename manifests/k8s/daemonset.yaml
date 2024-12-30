@@ -18,6 +18,11 @@ spec:
             - -c
             - /etc/hysteria/config.yaml
           image: tobyxdd/hysteria:v2.2.4
+          env:
+            - name: HYSTERIA_LOG_LEVEL
+              value: error
+            - name: HYSTERIA_DISABLE_UPDATE_CHECK
+              value: "1"
           name: hysteria2
           ports:
             - containerPort: 443
