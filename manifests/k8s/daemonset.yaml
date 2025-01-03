@@ -25,9 +25,9 @@ spec:
               value: "1"
           name: hysteria2
           ports:
-            - containerPort: 443
-              hostPort: 8443
-              protocol: TCP
+            # - containerPort: 443
+            #   hostPort: 8443
+            #   protocol: TCP
             - containerPort: 443
               hostPort: 8443
               protocol: UDP
