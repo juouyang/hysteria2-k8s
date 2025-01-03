@@ -15,12 +15,12 @@ docker-compose up
 kubectl create secret generic hysteria-config -n hysteria \
   --from-file=server/config.yaml \
   --from-file=server/acl.txt \
-  -o yaml --dry-run=client > manifests/k8s/hysteria-config-secret.yaml
+  -o yaml --dry-run=client | kubectl apply -f - && kubectl rollout restart daemonset
 
 kubectl create secret tls hysteria-tls -n hysteria \
   --cert=tls/tls.crt \
   --key=tls/tls.key \
-  -o yaml --dry-run=client > manifests/k8s/hysteria-tls-secret.yaml
+  -o yaml --dry-run=client | kubectl apply -f -
 ```
 
 Sealed secret (for GitOps)
