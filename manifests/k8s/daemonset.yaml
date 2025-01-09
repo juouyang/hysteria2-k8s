@@ -26,7 +26,7 @@ spec:
           name: hysteria2
           ports:
             - containerPort: 443
-              hostPort: 8443
+              hostPort: 20443
               protocol: UDP
           resources:
             requests:
@@ -41,10 +41,10 @@ spec:
               mountPath: "/etc/tls"
         - name: udp-ping-pong
           image: juouyang/udp-ping-pong:latest
-          args: ["0.0.0.0", "12345", "--silent"]
+          args: ["0.0.0.0", "21443", "--silent"]
           ports:
-            - containerPort: 12345
-              hostPort: 12345
+            - containerPort: 21443
+              hostPort: 21443
               protocol: UDP
       restartPolicy: Always
       volumes:
