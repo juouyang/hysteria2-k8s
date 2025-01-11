@@ -27,6 +27,9 @@ spec:
           ports:
             - containerPort: 443
               hostPort: 20443
+              protocol: TCP
+            - containerPort: 443
+              hostPort: 20443
               protocol: UDP
           resources:
             requests:
