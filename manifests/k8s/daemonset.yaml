@@ -50,6 +50,13 @@ spec:
               hostPort: 21443
               protocol: UDP
       restartPolicy: Always
+      tolerations:
+      - effect: NoExecute
+        key: low-memory
+        operator: Equal
+        value: "true"
+      - effect: NoSchedule
+        operator: Exists
       volumes:
         - name: hysteria-config-volume
           secret:
