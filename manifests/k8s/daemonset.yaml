@@ -51,12 +51,10 @@ spec:
               protocol: UDP
       restartPolicy: Always
       tolerations:
-      - effect: NoExecute
-        key: low-memory
-        operator: Equal
-        value: "true"
-      - effect: NoSchedule
-        operator: Exists
+      - key: "resource-class"
+        operator: "Equal"
+        value: "low-memory"
+        effect: "NoSchedule"
       volumes:
         - name: hysteria-config-volume
           secret:
